@@ -1,4 +1,6 @@
-const Criptomoneda = ({ nombre, simbolo, precio, enlace, variacion }) => {
+import { Link } from "react-router-dom";
+
+const Criptomoneda = ({ nombre, simbolo, precio, enlace, variacion, id }) => {
   return (
     <>
       <div className="criptomoneda">
@@ -11,11 +13,9 @@ const Criptomoneda = ({ nombre, simbolo, precio, enlace, variacion }) => {
           </li>
         </ul>
         <div className="boton">
-          <button type="button">
-            <a href={enlace} target="_blank">
-              ENLACE
-            </a>
-          </button>
+          
+            <Link to={`/criptos/${id}`}><button type="button">INFO</button></Link>
+          
         </div>
       </div>
     </>

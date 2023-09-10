@@ -33,6 +33,7 @@ function Cuadricula() {
             enlace={explorer}
             variacion={parseFloat(changePercent24Hr).toFixed(3)}
             key={id}
+            id={id}
           />
         ))}
       </div>
