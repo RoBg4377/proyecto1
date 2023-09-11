@@ -1,0 +1,23 @@
+.principal{
+    display: grid;
+    justify-content: center;
+    margin: 50px;
+}
+.link2{
+    margin: 5rem auto;
+}
+.button {
+    background-color: #3a5689;
+    width: 200px;
+    height: 100px;
+    border-right: solid 3px goldenrod;
+    border-bottom: solid 3px goldenrod;
+    
+
+
+}
+.button:hover{
+    transform: scale(1.1);
+    background-color: #718cbd;
+    cursor: pointer;
+}
