@@ -9,7 +9,7 @@ const Home = () => {
         <p>Un listado de las 100 criptomonedas más usadas</p>
 
         <Link to={"/criptos"} className="link2">
-          <button className="button">LISTADO DE MONEDAS</button>
+          <button className="button">ENTRAR AL LISTADO DE MONEDAS</button>
         </Link>
       </div>
     </>

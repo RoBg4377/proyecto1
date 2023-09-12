@@ -1,0 +1,31 @@
+.container{
+    display: flex;
+    max-width: 95%;
+    margin: auto;
+    
+
+}
+.moneda{
+    width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 2px #eee;
+    border-radius: 15px;
+    background-color: rgba(240, 248, 255, 0.085);
+}
+li{
+    list-style: square;
+}
+.nombre{
+    font-size: 1.5rem;
+}
+.dato{
+    background-color: aliceblue;
+    color: #030C1D;
+    padding: 0.6rem;
+    font-size: 1.1rem;
+    border-radius: 5px;    
+}
+.elemento {
+    margin-bottom: 2.5rem;
+}

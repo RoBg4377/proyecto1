@@ -7,7 +7,7 @@ import Seccion_2 from "./components/Seccion_2.jsx";
 import Cuadricula from "./components/Cuadricula.jsx";
 import App from "./App.jsx";
 import Home from "./Home.jsx";
-import Moneda from "./components/Moneda.jsx";
+import Monedas from "./components/Monedas.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>  
@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       </Route>
       <Route path= "/criptos" element={<App />}>
         <Route index element={<Cuadricula />} />
-        <Route path=":id" element={<Moneda />} />
+        <Route path=":id" element={<Monedas />} />
         <Route path="Seccion-1" element={<Seccion_1 />} />
         <Route path="Seccion-2" element={<Seccion_2 />} />
       </Route>
