@@ -12,8 +12,8 @@ const Moneda = ({
   vwap24Hr,
 }) => {
   return (
-    <div className="container">
       <div className="moneda">
+        <h1>{id.toUpperCase()}</h1>
         <ul className="elemento">
           <li>
             <span className="nombre">Identificador: </span>
@@ -22,7 +22,7 @@ const Moneda = ({
         </ul>
         <ul className="elemento">
           <li>
-            <span className="nombre">Rango de valor en el mercado: </span>
+            <span className="nombre">Ranking en el mercado: </span>
             <span className="dato">{rank}</span>
           </li>
         </ul>
@@ -40,45 +40,41 @@ const Moneda = ({
         </ul>
         <ul className="elemento">
           <li>
-            <span className="nombre">Disponibilidad para el comercio: </span>
+            <span className="nombre">Disponibile: </span>
             <span className="dato">$ {supply}</span>
           </li>
         </ul>
-      </div>
-
-      <div className="moneda">
         <ul className="elemento">
           <li>
-            <span className="nombre">Cantidad total emitida: </span>
+            <span className="nombre">Total emitido: </span>
             <span className="dato">$ {maxSupply}</span>
           </li>
         </ul>
         <ul className="elemento">
           <li>
-            <span className="nombre">Volumen operado en el último día: </span>
+            <span className="nombre">Operado 24H: </span>
             <span className="dato">$ {volumeUsd24Hr}</span>
           </li>
         </ul>
         <ul className="elemento">
           <li>
-            <span className="nombre">Precio en dólares: </span>
+            <span className="nombre">Precio: </span>
             <span className="dato">$ {priceUsd}</span>
           </li>
         </ul>
         <ul className="elemento">
           <li>
-            <span className="nombre">Variación en el último día: </span>
-            <span className="dato">% {changePercent24Hr}</span>
+            <span className="nombre">Variación 24H: </span>
+            <span className={changePercent24Hr > 0 ? "dato positivo": "dato negativo"}>% {changePercent24Hr}</span>
           </li>
         </ul>
         <ul className="elemento">
           <li>
-            <span className="nombre">Precio promedio en el último día: </span>
+            <span className="nombre">Promedio 24H: </span>
             <span className="dato">$ {vwap24Hr}</span>
           </li>
         </ul>
       </div>
-    </div>
   );
 };
 export default Moneda;

@@ -23,6 +23,7 @@ function Cuadricula() {
 
   return (
     <>
+    <div className="container">
       <h1>CRIPTOMONEDAS</h1>
       <div className="criptomonedas">
         {criptos.map(({name, symbol, priceUsd, explorer, id, changePercent24Hr}) => (
@@ -37,6 +38,8 @@ function Cuadricula() {
           />
         ))}
       </div>
+    </div>
+      
     </>
   );
 }
