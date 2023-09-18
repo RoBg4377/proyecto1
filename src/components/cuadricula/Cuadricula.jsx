@@ -1,21 +1,10 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 import Criptomoneda from "./Criptomoneda";
 import "./Cuadricula.css";
+import usePedido from "../../hooks/usePedido";
 
 function Cuadricula() {
-  const [criptos, setCriptos] = useState();
-  const URL_API = import.meta.env.VITE_API_URL;
 
-  useEffect(() => {
-    axios
-      .get(`${URL_API}assets`)
-      .then((objeto) => {
-        setCriptos(objeto.data.data);
-        console.log(objeto.data.data);
-      })
-      .catch(() => console.error("Falló al conseguir los datos"));
-  }, []);
+  const criptos = usePedido("assets")
 
   if (!criptos) {
     return <span>Cargando...</span>;
@@ -30,7 +19,7 @@ function Cuadricula() {
           <Criptomoneda
             nombre={name}
             simbolo={symbol}
-            precio={parseFloat(priceUsd).toFixed(3)}
+            precio={parseFloat(priceUsd).toFixed(2)}
             enlace={explorer}
             variacion={parseFloat(changePercent24Hr).toFixed(3)}
             key={id}
