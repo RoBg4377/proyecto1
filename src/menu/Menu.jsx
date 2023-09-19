@@ -7,7 +7,7 @@ const Menu = () => {
             <ul>
                 <li className="link"><NavLink to={"/"} className="link">HOME</NavLink></li>
                 <li className="link"><NavLink to={"/Criptos"} className="link">LISTADO</NavLink></li>
-                <li className="link"><NavLink to={"Seccion-2"} className="link">SECCION 2</NavLink></li>
+                <li className="link"><NavLink to={"autor"} className="link">AUTOR</NavLink></li>
             </ul>
         </nav>
     )

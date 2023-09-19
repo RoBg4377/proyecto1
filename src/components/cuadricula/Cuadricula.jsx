@@ -1,21 +1,30 @@
 import Criptomoneda from "./Criptomoneda";
 import "./Cuadricula.css";
 import usePedido from "../../hooks/usePedido";
+import { useContext } from "react";
+import { AutorContext } from "../context/AutorProvider";
 
 function Cuadricula() {
 
-  const criptos = usePedido("assets")
+  const rodrigo = useContext(AutorContext)
 
-  if (!criptos) {
-    return <span>Cargando...</span>;
-  }
+  const [criptos, carga] = usePedido("assets")
+
+  if (carga)
+  return (
+    <div className="cargando">
+      <h1>CARGANDO...</h1>
+    </div>
+  );
 
   return (
     <>
     <div className="container">
       <h1>CRIPTOMONEDAS</h1>
       <div className="criptomonedas">
-        {criptos.map(({name, symbol, priceUsd, explorer, id, changePercent24Hr}) => (
+
+        {criptos &&
+        criptos.map(({name, symbol, priceUsd, explorer, id, changePercent24Hr}) => (
           <Criptomoneda
             nombre={name}
             simbolo={symbol}
@@ -27,6 +36,7 @@ function Cuadricula() {
           />
         ))}
       </div>
+      <h2>{rodrigo.nombre}</h2>
     </div>
       
     </>

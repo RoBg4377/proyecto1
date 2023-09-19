@@ -1,0 +1,9 @@
+.cargando,.error{
+    margin-top: 10rem;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.error > img{
+    width: 300px;
+}
