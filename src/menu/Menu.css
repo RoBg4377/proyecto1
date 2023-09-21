@@ -14,3 +14,30 @@
     color: #030C1D;
     font-size: 1rem;
 }
+.cerrar{
+    list-style:none;
+    cursor: pointer;   
+    margin-top: 1rem;
+    font-size: 0.6rem;
+}
+.cerrar:hover{
+    color: #030C1D;
+    font-size: 0.65rem;
+}
+.saludo{
+    width: 10rem;
+    position: absolute;
+    top:0;
+    right: 2rem;
+}
+.imagen{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.usuario{
+    display: flex;
+    align-items: center;
+}
+.nombre{
+    margin-left: 1rem;
+}

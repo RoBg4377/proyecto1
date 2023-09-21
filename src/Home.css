@@ -1,3 +1,6 @@
+.titulos{
+    text-align: center;
+}
 .principal{
     display: grid;
     justify-content: center;
@@ -20,4 +23,17 @@
     transform: scale(1.1);
     background-color: #718cbd;
     cursor: pointer;
+}
+.button2{
+    margin-top: 2rem;
+    background-color: #3a5689;
+    width: 10rem;
+    height: 3rem;
+    border-right: solid 3px goldenrod;
+    border-bottom: solid 3px goldenrod; 
+}
+.ingreso{
+    display: flex;
+    justify-content: space-around;
+
 }

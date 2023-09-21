@@ -1,8 +1,10 @@
 import { useState } from "react";
 import "./Login.css";
-import { useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+  const navegar = useNavigate()
+
   const [usuario, setUsuario] = useState({
     email: "",
     password: ""
@@ -15,6 +17,7 @@ const Login = () => {
     .post("https://reqres.in/api/login", usuario)
     .then((dato) =>{
       localStorage.setItem("loginToken", dato.data.token);
+      navegar("/")
     })
     .catch((e) => console.error(e))
   };

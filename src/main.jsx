@@ -9,20 +9,23 @@ import Autor from "./components/Autor.jsx";
 import "./main.css";
 import { AutorContextProvider } from "./components/context/AutorProvider.jsx";
 import Login from "./log/Login.jsx";
+import { UsuarioProvider } from "./components/context/UsuarioProvider.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <AutorContextProvider>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/criptos" element={<App />}>
-          <Route index element={<Cuadricula />} />
-          <Route path=":id" element={<Monedas />} />
-          <Route path="autor" element={<Autor />} />
-        </Route>
-        <Route path="login" element={<Login />}/>
-        <Route path="*" element={<Error404 />} />
-      </Routes>
-    </BrowserRouter>
+    <UsuarioProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/criptos" element={<App />}>
+            <Route index element={<Cuadricula />} />
+            <Route path=":id" element={<Monedas />} />
+            <Route path="autor" element={<Autor />} />
+          </Route>
+          <Route path="login" element={<Login />} />
+          <Route path="*" element={<Error404 />} />
+        </Routes>
+      </BrowserRouter>
+    </UsuarioProvider>
   </AutorContextProvider>
 );

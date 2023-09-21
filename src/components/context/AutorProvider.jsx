@@ -12,7 +12,7 @@ const AutorContextProvider = ({children}) =>{
             nombre: "Rodrigo",
             apellido: "Benavides",
             titulo: "Proyecto React Nº 1",
-            fecha: "18 de Septiembre de 2023",
+            fecha: "Septiembre de 2023",
             comentarios: "Todos los derechos reservados"
         })
     ),[])

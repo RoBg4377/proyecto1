@@ -2,15 +2,36 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 
 const Home = () => {
+  let botones;
+
+  if (localStorage.getItem("loginToken")) {
+    botones = (
+      <Link to={"/criptos"} className="link2">
+        <button className="button">ENTRAR AL LISTADO DE MONEDAS</button>
+      </Link>
+    );
+  } else {
+    botones = (
+      <>
+      <div className="ingreso">
+      <Link to={"/login"} className="link3">
+        <button className="button2">REGISTRARTE</button>
+      </Link>
+      <Link to={"/login"} className="link3">
+        <button className="button2">LOGEARTE</button>
+      </Link>
+      </div>
+      </>
+    );
+  }
+
   return (
     <>
-      <h1>Bienvenido a Criptolistado</h1>
       <div className="principal">
-        <p>Un listado de las 100 criptomonedas más usadas</p>
+      <h1 className="titulos">Bienvenido a Criptolistado</h1>
+        <h3 className="titulos">Un listado de las 100 criptomonedas más usadas</h3>
 
-        <Link to={"/criptos"} className="link2">
-          <button className="button">ENTRAR AL LISTADO DE MONEDAS</button>
-        </Link>
+        {botones}
       </div>
     </>
   );

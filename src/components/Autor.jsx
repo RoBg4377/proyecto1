@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import "./Autor.css";
-import {AutorContext, AutorContextProvider } from "./context/AutorProvider";
+import {AutorContext} from "./context/AutorProvider";
 const Seccion_2 = () => {
     const autor = useContext(AutorContext)
 
