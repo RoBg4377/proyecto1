@@ -8,6 +8,7 @@ import Monedas from "./components/cuadricula/Monedas.jsx";
 import Autor from "./components/Autor.jsx";
 import "./main.css";
 import { AutorContextProvider } from "./components/context/AutorProvider.jsx";
+import Login from "./log/Login.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <AutorContextProvider>
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path=":id" element={<Monedas />} />
           <Route path="autor" element={<Autor />} />
         </Route>
+        <Route path="login" element={<Login />}/>
         <Route path="*" element={<Error404 />} />
       </Routes>
     </BrowserRouter>
