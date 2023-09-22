@@ -1,14 +1,21 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
+import { UsuarioContext} from "./components/context/UsuarioProvider";
+import { useContext } from "react";
 
 const Home = () => {
+  const usuario = useContext(UsuarioContext)
+
   let botones;
 
   if (localStorage.getItem("loginToken")) {
     botones = (
+      <>
+      <h4 className="titulos">¡Hola! {usuario.nomUsuario}</h4>
       <Link to={"/criptos"} className="link2">
         <button className="button">ENTRAR AL LISTADO DE MONEDAS</button>
       </Link>
+      </>
     );
   } else {
     botones = (

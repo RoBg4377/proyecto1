@@ -3,23 +3,30 @@ import "./Login.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 const Login = () => {
-  const navegar = useNavigate()
+  const navegar = useNavigate();
 
   const [usuario, setUsuario] = useState({
     email: "",
-    password: ""
+    password: "",
   });
-
+  const [cargar, setCargar] = useState(false);
+  const [error, setError] = useState();
 
   const submit = (e) => {
-    e.preventDefault()
+    setCargar(true);
+    e.preventDefault();
     axios
-    .post("https://reqres.in/api/login", usuario)
-    .then((dato) =>{
-      localStorage.setItem("loginToken", dato.data.token);
-      navegar("/")
-    })
-    .catch((e) => console.error(e))
+      .post("https://reqres.in/api/login", usuario)
+      .then((dato) => {
+        localStorage.setItem("loginToken", dato.data.token);
+        navegar("/");
+        setCargar(false);
+      })
+      .catch((e) => {
+        setCargar(false);
+        console.table(e.response.data.error);
+        setError(e.response.data.error);
+      });
   };
 
   return (
@@ -33,9 +40,7 @@ const Login = () => {
             type="email"
             name="email"
             className="loginInput"
-            onChange={(e) =>
-              setUsuario({ ...usuario, email: e.target.value })
-            }
+            onChange={(e) => setUsuario({ ...usuario, email: e.target.value })}
           />
         </div>
         <div className="field">
@@ -46,7 +51,7 @@ const Login = () => {
             name="password"
             className="loginInput"
             onChange={(e) =>
-              setUsuario({...usuario, password: e.target.value})
+              setUsuario({ ...usuario, password: e.target.value })
             }
           />
         </div>
@@ -54,11 +59,15 @@ const Login = () => {
           <input
             type="submit"
             name="submit"
-            value="INGRESAR"
+            value={cargar ? "CARGANDO..." : "INGRESAR"}
             className=" loginBoton"
           />
         </div>
       </form>
+      <div className="errorContainer">
+
+      {error && <span className="error">{error}</span>}
+      </div>
     </div>
   );
 };
