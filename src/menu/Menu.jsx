@@ -27,8 +27,8 @@ const Menu = () => {
         </li>
         <div className="saludo">
           <div className="usuario">
-            <img src={usuario.img} alt="" className="imagen" />
-            <p className="nombre">¡Hola! {usuario.nomUsuario}</p>
+            <img src={usuario.data.avatar} alt="" className="imagen" />
+            <p className="nombre">¡Hola! {usuario.data.first_name}</p>
           </div>
 
           <li

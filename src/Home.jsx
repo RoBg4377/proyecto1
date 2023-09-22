@@ -5,13 +5,14 @@ import { useContext } from "react";
 
 const Home = () => {
   const usuario = useContext(UsuarioContext)
+  console.log(usuario)
 
   let botones;
 
   if (localStorage.getItem("loginToken")) {
     botones = (
       <>
-      <h4 className="titulos">¡Hola! {usuario.nomUsuario}</h4>
+      <h4 className="titulos">¡Hola! {usuario.data.first_name} {usuario.data.last_name}</h4>
       <Link to={"/criptos"} className="link2">
         <button className="button">ENTRAR AL LISTADO DE MONEDAS</button>
       </Link>

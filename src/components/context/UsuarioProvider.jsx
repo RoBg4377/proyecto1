@@ -8,8 +8,17 @@ const UsuarioProvider = ({children}) =>{
     useEffect(() =>(
         setUsuario(
             {
-                nomUsuario: "Rodrigotete",
-                img: "https://img2.freepng.es/20200413/cx/transparent-icon-design-5e9514e3e94e76.6287660515868285159556.jpg"
+                "data": {
+                    "id": 2,
+                    "email": "janet.weaver@reqres.in",
+                    "first_name": "Janet",
+                    "last_name": "Weaver",
+                    "avatar": "https://reqres.in/img/faces/2-image.jpg"
+                },
+                "support": {
+                    "url": "https://reqres.in/#support-heading",
+                    "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+                }
             }
         )
     ),[])
