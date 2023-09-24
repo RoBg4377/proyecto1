@@ -1,5 +1,6 @@
 .titulos{
     text-align: center;
+    text-transform: uppercase;
 }
 .principal{
     display: grid;

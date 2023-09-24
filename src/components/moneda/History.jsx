@@ -1,8 +1,7 @@
 import "./History.css"
 const History = ({history}) => {
     return (
-        <div className="cotizacion">
-          <h2>COTIZACIÓN EN EL ULTIMO AÑO</h2>
+        <>
           <table className="tabla">
             <thead>
               <tr>
@@ -22,7 +21,7 @@ const History = ({history}) => {
                 </tbody>
               ))}
           </table>
-        </div>
+        </>
     )
 }
 export default History;

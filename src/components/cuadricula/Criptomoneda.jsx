@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./Criptomoneda.css"
 
 const Criptomoneda = ({ nombre, simbolo, precio, enlace, variacion, id }) => {
   return (

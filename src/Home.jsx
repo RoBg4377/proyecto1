@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
-import { UsuarioContext} from "./components/context/UsuarioProvider";
+import { UsuarioContext, UsuarioProvider} from "./components/context/UsuarioProvider";
 import { useContext } from "react";
 
 const Home = () => {
   const usuario = useContext(UsuarioContext)
-  console.log(usuario)
+  console.log(usuario.data.first_name)
 
   let botones;
 

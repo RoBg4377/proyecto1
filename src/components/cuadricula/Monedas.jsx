@@ -25,11 +25,12 @@ const Monedas = () => {
 
   return (
     <>
-      <div className="container2">
-        <div>{mon && <Moneda mon={mon} />}</div>
-        <div className="cotizacion">
-          {history && <History history={history} />}
-        </div>
+      < div className="container2">
+          <div className="moneda">{mon && <Moneda mon={mon} />}</div>
+          <div className="cotizacion">
+            <h3 className="titulos">Cotización historica anual</h3>
+            {history && <History history={history} />} 
+            </div>
       </div>
     </>
   );

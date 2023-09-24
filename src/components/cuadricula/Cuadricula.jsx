@@ -36,7 +36,6 @@ function Cuadricula() {
           />
         ))}
       </div>
-      <h2>{rodrigo.nombre}</h2>
     </div>
       
     </>

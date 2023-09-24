@@ -1,8 +1,8 @@
 import "./Moneda.css";
 const Moneda = ({mon}) => {
   return (
-      <div className="moneda">
-        <h1>{mon.id.toUpperCase()}</h1>
+    <>
+        <h2>{mon.id.toUpperCase()}</h2>
         <ul className="elemento">
           <li>
             <span className="nombre">Identificador: </span>
@@ -63,7 +63,7 @@ const Moneda = ({mon}) => {
             <span className="dato">$ {parseFloat(mon.vwap24Hr).toFixed(2)}</span>
           </li>
         </ul>
-      </div>
+    </>
   );
 };
 export default Moneda;
